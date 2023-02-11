@@ -1,0 +1,84 @@
+CREATE TABLE Author
+(
+    AuthorID VARCHAR(15) NOT NULL,
+    FirstName VARCHAR2(15) NOT NULL,
+    LastName VARCHAR2(15) NOT NULL,
+    BirthDate DATE,
+    FirstRelease DATE,
+    TotalBooks NUMBER NOT NULL,
+ CONSTRAINT PK_Author PRIMARY KEY (AuthorId)
+ ) ;
+ 
+CREATE TABLE Book
+(
+    BookID NUMBER NOT NULL,
+    Title VARCHAR2(50) NOT NULL,
+    AuthorID NUMBER NOT NULL,
+    GenreID NUMBER NOT NULL,
+    Length VARCHAR2(10) NOT NULL,
+    ReleaseDate DATE,
+    Cost VARCHAR2(10) NOT NULL,
+    ISBN NUMBER NOT NULL,
+ CONSTRAINT PK_Book PRIMARY KEY (BookId),
+ CONSTRAINT FK_BookAuthorID FOREIGN KEY (AuthorId) REFERENCES Author (AuthorId)
+ CONSTRAINT FK_BookGenreID FOREIGN KEY (GenreId) REFERENCES Genre (GenreId)
+ ) ;
+ 
+CREATE TABLE Genre
+(
+    GenreID NUMBER NOT NULL,
+    Type VARCHAR2(25) NOT NULL,
+ CONSTRAINT PK_Genre PRIMARY KEY (GenreId)
+) ;
+
+CREATE TABLE Inventory
+(
+    InventoryID NUMBER NOT NULL,
+    BookID NUMBER NOT NULL,
+    Count NUMBER NOT NULL,
+ CONSTRAINT PK_Inventory PRIMARY KEY (InventoryId),
+ CONSTRAINT FK_InventoryBookID FOREIGN KEY (BookId) REFERENCES Book (BookId)
+) ;
+
+CREATE TABLE Reader
+(
+    ReaderID NUMBER NOT NULL,
+    FirstName VARCHAR2(15) NOT NULL,
+    LastName VARCHAR2(15) NOT NULL,
+    BirthDate DATE,
+    Age NUMBER NOT NULL,
+    BooksRead NUMBER NOT NULL,
+    AvgPerMonth NUMBER NOT NULL,
+    Address VARCHAR2(150) NOT NULL,
+    City VARCHAR2(50) NOT NULL,
+    State VARCHAR2(15) NOT NULL,
+    Zipcode VARCHAR2(10) NOT NULL,
+ CONSTRAINT PK_Reader PRIMARY KEY (ReaderId)
+ ) ;
+ 
+CREATE TABLE Purchase
+(
+    PurchaseID NUMBER NOT NULL,    
+    ReaderID NUMBER NOT NULL,
+    Date DATE,
+    Time VARCHAR2(10) NOT NULL,
+    BookID NUMBER NOT NULL,
+    Price VARCHAR2(10) NOT NULL,
+ CONSTRAINT PK_Purchase PRIMARY KEY (PurchaseId),
+ CONSTRAINT FK_PurchaseReaderID FOREIGN KEY (ReaderId) REFERENCES Reader (ReaderId),
+ CONSTRAINT FK_PurchaseBookID FOREIGN KEY (BookId) REFERENCES Book (BookId)
+ ) ;
+ 
+CREATE TABLE Payment
+(
+    PaymentID NUMBER NOT NULL, 
+    PurchaseID NUMBER NOT NULL,    
+    ReaderID NUMBER NOT NULL,
+    CardType VARCHAR2(15) NOT NULL,
+    CardNumber NUMBER NOT NULL,
+    ExpDate DATE,
+    CCV NUMBER NOT NULL,
+ CONSTRAINT PK_Payment PRIMARY KEY (PaymentId),
+ CONSTRAINT FK_PaymentPurchaseID FOREIGN KEY (PurchaseId) REFERENCES Purchase (PurchaseId),
+ CONSTRAINT FK_PaymentReaderID FOREIGN KEY (ReaderId) REFERENCES Reader (ReaderId)
+ ) ;
