@@ -1,0 +1,48 @@
+--#1 
+SELECT *
+FROM Reader
+WHERE BooksRead > 20;
+
+--#2
+SELECT Book.Title, Inventory.Count
+FROM Book, Inventory
+WHERE Book.BookID = Inventory.BookID
+GROUP BY Book.Title
+ORDER BY Inventory.Count, ASC;
+
+--#3
+SELECT Count(AuthorID) as NumberofAuthors
+FROM Author
+WHERE FirstRelease BETWEEN '2010-01-01' AND '2020-01-01';
+
+--#4
+SELECT Author.LastName, Book.Title, Book.ReleaseDate
+FROM Author
+INNER JOIN Book
+ON Author.AuthorID = Book.AuthorID
+ORDER BY Book.ReleaseDate, DESC;
+
+--#5
+SELECT SUM(Price) as TotalPrice, Reader.ReaderID, Reader.FirstName, Reader.LastName
+FROM Reader, Purchase
+WHERE Reader.ReaderID = Purchase.ReaderID
+GROUP BY Reader.ReaderID
+ORDER BY TotalPrice, ASC;
+
+--#6
+SELECT FirstName, LastName, TotalBooks
+FROM Author;
+
+--#7
+SELECT Book.Title, Inventory.Count
+FROM Book, Inventory
+WHERE Book.BookID = Inventory.BookID
+AND Book.GenreID = 2
+GROUP BY Book.Title
+ORDER BY Inventory.Count, DESC;
+
+--#8
+SELECT Book.Title, Inventory.Count, Book.ReleaseDate
+From Book, Inventory
+WHERE Book.BookID = Inventory.BookID
+ORDER BY Book.ReleaseDate, DESC;
