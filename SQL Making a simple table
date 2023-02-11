@@ -1,0 +1,54 @@
+SQL Basics 
+/*How to create a table of books with the Id which in this case 
+is the primary key and the name of the books as well as the rating which
+is a number, calling this an integer with a numerical value*/
+
+
+CREATE TABLE books(id INTEGER PRIMARY KEY, name TEXT, rating INTEGER);
+
+INSERT INTO books VALUES(1,”The Hunger Games”,6);
+INSERT INTO books VALUES(2,”Twilight”,9);
+INSERT INTO books VALUES(3,”Harry Potter”,2);
+INSERT INTO books VALUES(4,”It”,3);
+INSERT INTO books VALUES(5,”Jaws”,8);
+INSERT INTO books VALUES(6,”Macbeth”,4);
+INSERT INTO books VALUES(7,”Cut”,1);
+INSERT INTO books VALUES(8,”Emma”,10);
+INSERT INTO books VALUES(9,”Wings”,2);
+INSERT INTO books VALUES(10,”Eve”,6);
+INSERT INTO books VALUES(11,”Gone”,7);
+INSERT INTO books VALUES(12,”Opal”,9);
+
+/*Here I take where the rating is greater than 4 by 
+the rating of each book rating in order to sort.*/
+
+SELECT * FROM books;
+SELECT * FROM books WHERE rating > 
+4 ORDER BY rating;
+
+
+/*Create your own store with items having at least 5 columns*/
+
+
+CREAT TABLE store(id PRIMARY KEY, item_type TEXT, quantity INTEGER, price INTEGER, size TEXT);
+
+INSERT INTO store VALUES (1, "Dress", 10, 54.00, "L");
+INSERT INTO store VALUES (2, "Skirt", 5, 64.00, "L");
+INSERT INTO store VALUES (3, "Shorts", 50, 4.00, "L");
+INSERT INTO store VALUES (4, "Pants", 6, 104.00, "L");
+INSERT INTO store VALUES (5, "Jeans", 60, 298.00, "L");
+INSERT INTO store VALUES (6, "Hats", 7, 33.00, "L");
+INSERT INTO store VALUES (7, "Socks", 77, 5.00, "L");
+INSERT INTO store VALUES (8, "Rings", 8, 4.99, "L");
+INSERT INTO store VALUES (9, "Bras", 80, 75.00, "L");
+INSERT INTO store VALUES (10, "Headbands", 200, 54.00, "L");
+INSERT INTO store VALUES (11, "Bikini", 100, 150.00, "L");
+INSERT INTO store VALUES (12, "Shoes", 1000, 500.00, "L");
+INSERT INTO store VALUES (13, "Scarf", 66, 99.00, "L");
+INSERT INTO store VALUES (14, "Shirt", 88, 54.00, "L");
+INSERT INTO store VALUES (15, "Tank Top", 99, 54.00, "L");
+
+SELECT * FROM store 
+ORDER BY price;
+
+SELECT SUM(quantity) FROM store;
