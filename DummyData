@@ -1,0 +1,104 @@
+INSERT INTO Genre (GenreID, Type) VALUES (1, 'Romance');
+INSERT INTO Genre (GenreID, Type) VALUES (2, 'Fiction');
+INSERT INTO Genre (GenreID, Type) VALUES (3, 'Science Fiction');
+INSERT INTO Genre (GenreID, Type) VALUES (4, 'Fantasy');
+INSERT INTO Genre (GenreID, Type) VALUES (5, 'Horror');
+
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (1, 'Colleen', 'Hoover','1979-12-11','2016-08-02','46');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (2, 'Kate', 'White','1951-09-03','2017-03-21','27');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (3, 'William', 'Gibson','1948-03-17','1984-07-01','40');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (4, 'George', 'Martin','1948-09-20','1996-08-01','51');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (5, 'Christopher', 'Buehlman','1969-02-21','2011-09-06','12');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (6, 'Harper', 'Lee','1971-10-25','2000-01-20','39');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (7, 'F. Scott', 'Fitzgerald','1896-09-24','1931-05-01','4');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (8, 'John', 'Steinbeck','1902-02-27','1939-02-14','25');
+INSERT INTO Author (AuthorID, FirstName,LastName,BirthDate,FirstRelease,TotalBooks)
+VALUES (9, 'Aldous', 'Huxley','1894-07-26','1926-02-13','49');
+
+
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length, Cost, ISBN)
+VALUES  (1,1,'It Ends With Us','2016-08-02',1,'400','9.99','9781501110368' );
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length, Cost, ISBN)
+VALUES ( 2,2, 'The Secrets you keep','2017-03-21',2,'368','12.99','0062448854');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length, Cost, ISBN)
+VALUES ( 3,3,'Neuromancer','1984-06-01',3,'271','8.99','9780441569595');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length, Cost, ISBN)
+VALUES ( 4,4, 'Game of Thrones','2011-04-17',4,'1088','14.99','9780007454495');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length, Cost, ISBN)
+VALUES ( 5,5,'Between Two Fires','2012-10-02',5,'464','17.99','9780425256909');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length,Cost, ISBN) 
+VALUES (6,6, 'To Kill a Mocking Bird', '1989-03-02',2, '325', '12.99', '859849378028380');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length,Cost, ISBN) 
+VALUES (7,7, 'The Great Gatsby', '2005-05-02', 2, '536','17.89', '4793938482938439');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length,Cost, ISBN) 
+VALUES (8,8,'The Grapes of Wrath','1939-08-25',2,'278', '19.99', '95048594888498390');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length,Cost, ISBN) 
+VALUES (9,9,'Brave New World', '1978-03-14', 2, '367', '8.90', '9585994583939849');
+INSERT INTO Book (BookID, AuthorID, Title, ReleaseDate, GenreID, Length,Cost, ISBN) 
+VALUES (10,8, 'Of Mice and Men', '1937-04-15', 2, '986', '14.99', '4782319749284791');
+
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (1, 1, '10');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (2, 2, '8');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (3, 3, '9');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (4, 4, '20');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (5, 5, '4');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (6, 6, '12');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (7, 7, '32');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (8, 8, '6');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (9, 9, '23');
+INSERT INTO Inventory (InventoryID, BookID, Count) Values (10, 10, '17');
+
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode) 
+VALUES (1, 'Grace', 'Caligagan','1999-08-16','23','13','1','1234 Sunset Lane', 'Los Angeles', 'CA', '90001');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode) 
+VALUES (2, 'Claire', 'Bentzen', '2001-02-20', '21' ,'30','3','456 Ruby Road', 'Seattle', 'WA', '98101');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode) 
+VALUES (3, 'Miranda', 'Gutierrez', '2000-05-25','22','15','2', '1543 SDSU Road', 'San Diego', 'CA', '91911');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode) 
+VALUES (4,'Guy', 'Schnitkes','2001-01-22','21', '54', '4', '509 Lily lane', 'Phoenix', 'AZ', '72901');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode) 
+VALUES (5, 'Sarah','Jenkins', '1990-02-22',32, 80, 3, '2456 Lily Street','San Diego','CA','92127');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode) 
+VALUES (6, 'John', 'Jimmy', '2000-03-12', 22,45, 5,' 3798 pine street', 'San Diego', 'CA' ,'92127');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode) 
+VALUES (7, 'Peter', 'Piper', '1997-04-02',24, 60,6,'908 New Salem Street','San Diego', 'CA', '92126');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode)
+VALUES (8, 'Jake', 'Monroe','2006-05-17','16','32','2','9376 Riley Road', 'Los Angeles', 'CA', '90001');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode)
+VALUES (9, 'Molly', 'Koch','1972-01-16','50','92','4','9007 Olive Lane', 'Los Angeles', 'CA', '90001');
+INSERT INTO Reader (ReaderID, FirstName, LastName, BirthDate, Age, BooksRead, AvgPerMonth, Address, City, State, Zipcode)
+VALUES (10, 'Brady', 'Salveson','1970-10-02','52','125','5','1847 Orange Road', 'Denver', 'CO', '80014');
+
+
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price) 
+VALUES (1, 1,'2022-01-21', '14:23:06', '1','9.99');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price) 
+VALUES (2, 2,'2022-05-15', '16:18:59', '4', '14.99');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price) 
+VALUES (3, 1,'2022-01-21', '14:23:06', '9','8.90');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price) 
+VALUES (4, 1,'2022-01-21', '14:23:06', '7','17.89');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price)
+VALUES (5, 1,'2022-01-21', '14:23:06', '1','9.99');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price)
+VALUES (6, 2,'2022-05-15', '16:18:59', '4', '14.99');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price)
+VALUES (7, 2,'2022-05-15', '16:18:59', '5', '17.99');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price)
+VALUES (8,3, '2022-09-13', '08:16:03', '7', '17.89');
+INSERT INTO Purchase (PurchaseID,ReaderID,Date,Time,BookID,Price)
+VALUES (9,3, '2022-09-13', '08:16:03', '8', '19.99');
+
+
+INSERT INTO Payment (PaymentID, ReaderID, PurchaseID, CardType, CardNumber, ExpDate,CCV) 
+VALUES (1,1,1, 'Visa', '4556418588488162', '07-30','784');
+INSERT INTO Payment (PaymentID, ReaderID, PurchaseID, CardType, CardNumber, ExpDate,CCV) 
+VALUES (2,2,2,'Mastercard', '78690385890385049584', '08-02','939');
